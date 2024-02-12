@@ -13,3 +13,7 @@ public void leaderboardConsumer(ConsumerRecord<String, LeaderboardCache> record)
     simpMessagingTemplate.convertAndSend("/leaderboard/" + leaderboard.leaderboardKey(), leaderboard);
 }
 ```
+
+- Consumes Leaderboard topic and pushes it to WebSocket at ```/leaderboard/" + leaderboard.leaderboardKey()```
+
+_Please see the [WebSocketConfig.java](https://github.com/fitiz/leaderboard-websocket-service/blob/main/src/main/java/com/fitiz/leaderboardwebsocketservice/configuration/WebSocketConfig.java) for STOMP protocol._
